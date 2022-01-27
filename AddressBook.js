@@ -179,7 +179,18 @@ function searchPersonByCity(Array, cityName) {
     const person = Array.filter(element => element.getcity() == cityName)
     return person;
 }
-
+/**
+ * @purpose -> UC10 : Ability to get number of contact persons i.e. count by City or State - Search Result will show count by city and
+ * @param {*} Array 
+ * @param {*} cityName 
+ * @param {*} stateName
+ * @returns It returs the number of contact persons in city and state
+ */
+function countPersonByCityState(Array, cityName, stateName) {
+    const cityCount = Array.filter(element => element.getcity() == cityName);
+    const stateCount = Array.filter(element => element.getstate() == stateName);
+    return console.log("The number of contact perosn by city count --> (" + cityCount.length + ") \nThe number of contact perosn by state count --> (" + stateCount.length + ")");
+}
 
 // ----------------------------------------main running ---------------------------------
 
@@ -195,3 +206,4 @@ console.log((getCountOfAddressBook(addressBook))); // UC6 Counting the person co
 newFunction(); // UC7
 console.log(serachPersonInparticularCity(addressBook, "Ashwath Naidu")); //UC8
 console.log(searchPersonByCity(addressBook, "gengaluru")); // UC9
+countPersonByCityState(addressBook, "Bengaluru", "Karnataka"); // UC10
