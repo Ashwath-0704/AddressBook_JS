@@ -157,6 +157,17 @@ function newFunction() {
     }
 }
 
+/**
+ * @purpose -> UC8 : Ability to view Persons by City or State
+ * @param {*} Array 
+ * @param {*} fullName 
+ * @returns 
+ */
+function serachPersonInparticularCity(Array, fullName) {
+    const numberOfPersonInCity = Array.filter(element => element.getFullName() == fullName)
+    return numberOfPersonInCity;
+}
+
 
 // ----------------------------------------main running ---------------------------------
 
@@ -170,3 +181,4 @@ console.log(findPerosnAndEditName(addressBook, "Ashwath", "Deepthi Reddy")); // 
 console.log(deletePersonFromArray(addressBook, "Ashwath")); // UC5 delete
 console.log((getCountOfAddressBook(addressBook))); // UC6 Counting the person count in array
 newFunction(); // UC7
+console.log(serachPersonInparticularCity(addressBook, "Ashwath Naidu")); //UC8
