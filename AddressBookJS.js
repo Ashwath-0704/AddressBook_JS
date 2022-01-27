@@ -75,7 +75,7 @@ const pattern_ADDRESS_CITY_STATE = /^[A-Za-z0-9.+,-\s]{4,}$/;
  *          -  Minimum 3 Characters Address, City and State should also have minimum 4 characters
  *          -  Zip, Phone and Email should be valid as done in the Pattern Exercise
  *          -  Throw Error if the RegEx test fail   
- * @purpose -> UC3 Ability to create a New Address Book array and add new Contacts to it
+ * @purpose -> UC3 Ability to create a New Address Book array and add new Contacts to it.
  * 
  * @param {*} firstName 
  * @param {*} lastName 
