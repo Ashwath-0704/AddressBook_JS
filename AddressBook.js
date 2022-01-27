@@ -131,6 +131,14 @@ function deletePersonFromArray(Array, firstName) {
     }
     return Array;
 }
+/**
+ * @purpose -> UC6 : Ability to find number of contacts in the address book
+ * @param {*} Array 
+ * @returns It returns the count of the array 
+ */
+function getCountOfAddressBook(Array) {
+    return Array.length;
+}
 
 
 // ----------------------------------------main running ---------------------------------
@@ -143,3 +151,4 @@ let addressBook = new Array(...personArray1, ...personArray2, ...personArray3); 
 
 console.log(findPerosnAndEditName(addressBook, "Ashwath", "Deepthi Reddy")); // UC4 edit person 
 console.log(deletePersonFromArray(addressBook, "Ashwath")); // UC5 delete
+console.log((getCountOfAddressBook(addressBook))); // UC6 Counting the person count in array
