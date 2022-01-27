@@ -168,6 +168,18 @@ function serachPersonInparticularCity(Array, fullName) {
     return numberOfPersonInCity;
 }
 
+/**
+ * @purpose -> UC9 :  Ability to view Persons by City or State
+ * 
+ * @param {*} Array 
+ * @param {*} cityName 
+ * @returns It returns the person details
+ */
+function searchPersonByCity(Array, cityName) {
+    const person = Array.filter(element => element.getcity() == cityName)
+    return person;
+}
+
 
 // ----------------------------------------main running ---------------------------------
 
@@ -182,3 +194,4 @@ console.log(deletePersonFromArray(addressBook, "Ashwath")); // UC5 delete
 console.log((getCountOfAddressBook(addressBook))); // UC6 Counting the person count in array
 newFunction(); // UC7
 console.log(serachPersonInparticularCity(addressBook, "Ashwath Naidu")); //UC8
+console.log(searchPersonByCity(addressBook, "gengaluru")); // UC9
