@@ -96,7 +96,6 @@ function addPerson(firstName, lastName, emailId, phoneNumber, zipCode, address, 
         console.log("Invalid Input!!!");
     }
 }
-
 // ----------------------------------------main running ---------------------------------
 
 let personArray1 = new Array(addPerson("Nikitha", "Reddy", "nikitk456@gmail.com", "91 8527418525", 456224, "near sai bab temple road, opposite to More supermarket,Kundanahalli gates", "Bengaluru", "Karnataka"));
