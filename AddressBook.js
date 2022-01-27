@@ -191,6 +191,18 @@ function countPersonByCityState(Array, cityName, stateName) {
     const stateCount = Array.filter(element => element.getstate() == stateName);
     return console.log("The number of contact perosn by city count --> (" + cityCount.length + ") \nThe number of contact perosn by state count --> (" + stateCount.length + ")");
 }
+/**
+ * @purpose -> Ability to sort the entries in the address book alphabetically by Person’s name
+ * @param {*} Array 
+ * @returns It returns the sorted list
+ */
+function sortByFullName(Array) {
+    Array.sort(function(x, y) {
+        let a = x.getFullName(),
+            b = y.getFullName();
+        return a == b ? 0 : a > b ? 1 : -1;
+    });
+}
 
 // ----------------------------------------main running ---------------------------------
 
@@ -207,3 +219,8 @@ newFunction(); // UC7
 console.log(serachPersonInparticularCity(addressBook, "Ashwath Naidu")); //UC8
 console.log(searchPersonByCity(addressBook, "gengaluru")); // UC9
 countPersonByCityState(addressBook, "Bengaluru", "Karnataka"); // UC10
+
+let addressBookForSorting = [...addressBook]; // UC11 copying a existing array data into new array 
+console.log(addressBookForSorting); // UC11 display data before sorting 
+sortByFullName(addressBookForSorting); // UC11
+console.log(addressBookForSorting); // UC11 display data after sorting
