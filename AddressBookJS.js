@@ -74,8 +74,8 @@ const pattern_ADDRESS_CITY_STATE = /^[A-Za-z0-9.+,-\s]{4,}$/;
  *          -  First Name and Last Name should start with Capital 
  *          -  Minimum 3 Characters Address, City and State should also have minimum 4 characters
  *          -  Zip, Phone and Email should be valid as done in the Pattern Exercise
- *          -  Throw Error if the RegEx test fail   
- * @purpose -> UC3 Ability to create a New Address Book array and add new Contacts to it.
+ *          -  Throw Error if the RegEx test fails    
+ * @purpose -> UC3 Ability to create a New Address Book array and add new Contacts to it
  * 
  * @param {*} firstName 
  * @param {*} lastName 
@@ -97,6 +97,25 @@ function addPerson(firstName, lastName, emailId, phoneNumber, zipCode, address, 
     }
 }
 
+/**
+ * @purpose -> UC4 : Ability to find existing contact person using their name and edit it 
+ * 
+ * @param {*} Array 
+ * @param {*} firstName 
+ * @param {*} fullName 
+ * @returns It returns the updated array 
+ */
+function findPerosnAndEditName(Array, firstName, fullName) {
+    for (let index = 0; index < Array.length; index++) {
+        let element = Array[index];
+        console.log(element);
+        if (element.checkForFirstName(firstName) == true) {
+            element.editFullName(fullName);
+        }
+    }
+    return Array;
+}
+
 
 // ----------------------------------------main running ---------------------------------
 
@@ -105,3 +124,5 @@ let personArray2 = new Array(addPerson("Ashwath", "Naidu", "ashwath.bly@gmail.co
 let personArray3 = new Array(addPerson("Gouthum", "Kurma", "gouthum123@gmail.com", "91 8527419643", 560001, "near sai bab temple road, opposite to More supermarket,Kundanahalli gates", "Kurnool", "Andhra"));
 let addressBook = new Array(...personArray1, ...personArray2, ...personArray3); // UC1 and  UC2 adding two person into array 
 // console.log(addressBook);
+
+console.log(findPerosnAndEditName(addressBook, "Ashwath", "Deepthi Reddy")); // UC4 edit person
