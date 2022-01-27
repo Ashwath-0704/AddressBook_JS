@@ -116,6 +116,22 @@ function findPerosnAndEditName(Array, firstName, fullName) {
     return Array;
 }
 
+/**
+ * @purpose -> UC5 : Ability to find a person with name delete it from the array
+ * @param {*} Array 
+ * @param {*} firstName 
+ * @returns It returns the updated array 
+ */
+function deletePersonFromArray(Array, firstName) {
+    for (let index = 0; index < Array.length; index++) {
+        const element = Array[index];
+        if (element.getfirstName() == firstName) {
+            Array.splice(element.getfirstName, 1)
+        }
+    }
+    return Array;
+}
+
 
 // ----------------------------------------main running ---------------------------------
 
@@ -125,4 +141,5 @@ let personArray3 = new Array(addPerson("Gouthum", "Kurma", "gouthum123@gmail.com
 let addressBook = new Array(...personArray1, ...personArray2, ...personArray3); // UC1 and  UC2 adding two person into array 
 // console.log(addressBook);
 
-console.log(findPerosnAndEditName(addressBook, "Ashwath", "Deepthi Reddy")); // UC4 edit person
+console.log(findPerosnAndEditName(addressBook, "Ashwath", "Deepthi Reddy")); // UC4 edit person 
+console.log(deletePersonFromArray(addressBook, "Ashwath")); // UC5 delete
