@@ -203,6 +203,44 @@ function sortByFullName(Array) {
         return a == b ? 0 : a > b ? 1 : -1;
     });
 }
+/**
+ * @purpose -> UC12 : Ability to sort the entries in the address book by City, State, or Zip
+ * @param {*} Array 
+ * @param {*} cityName 
+ * @returns 
+ */
+function serachPersonSortByCityOrByStateOrByZipcode(Array) {
+    const prompt = require("prompt-sync")();
+    const choice = prompt("Sort by city -> (1)\nSort by state -> (2)\nSort by zip Code -> (3)");
+    switch (choice) {
+        case "1": // Sort by city
+            Array.sort(function(x, y) {
+                let a = x.getcity(),
+                    b = y.getcity();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            break;
+        case "2": // Sort by state
+            Array.sort(function(x, y) {
+                let a = x.getstate(),
+                    b = y.getstate();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            break;
+        case "3": // Sort by zip Code
+            Array.sort(function(x, y) {
+                let a = x.getzipCode(),
+                    b = y.getzipCode();
+                return a == b ? 0 : a > b ? 1 : -1;
+            });
+            break;
+        default:
+            break;
+    }
+
+
+}
+
 
 // ----------------------------------------main running ---------------------------------
 
@@ -223,4 +261,7 @@ countPersonByCityState(addressBook, "Bengaluru", "Karnataka"); // UC10
 let addressBookForSorting = [...addressBook]; // UC11 copying a existing array data into new array 
 console.log(addressBookForSorting); // UC11 display data before sorting 
 sortByFullName(addressBookForSorting); // UC11
-console.log(addressBookForSorting); // UC11 display data after sorting
+console.log(addressBookForSorting); // UC11 display data after sorting  
+
+serachPersonSortByCityOrByStateOrByZipcode(addressBookForSorting); // UC12
+console.log(addressBookForSorting); // UC12 display data after sorting
