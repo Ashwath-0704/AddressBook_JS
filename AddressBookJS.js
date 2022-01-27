@@ -74,7 +74,7 @@ const pattern_ADDRESS_CITY_STATE = /^[A-Za-z0-9.+,-\s]{4,}$/;
  *          -  First Name and Last Name should start with Capital 
  *          -  Minimum 3 Characters Address, City and State should also have minimum 4 characters
  *          -  Zip, Phone and Email should be valid as done in the Pattern Exercise
- *          -  Throw Error if the RegEx test fails    
+ *          -  Throw Error if the RegEx test fail   
  * @purpose -> UC3 Ability to create a New Address Book array and add new Contacts to it
  * 
  * @param {*} firstName 
@@ -96,6 +96,8 @@ function addPerson(firstName, lastName, emailId, phoneNumber, zipCode, address, 
         console.log("Invalid Input!!!");
     }
 }
+
+
 // ----------------------------------------main running ---------------------------------
 
 let personArray1 = new Array(addPerson("Nikitha", "Reddy", "nikitk456@gmail.com", "91 8527418525", 456224, "near sai bab temple road, opposite to More supermarket,Kundanahalli gates", "Bengaluru", "Karnataka"));
