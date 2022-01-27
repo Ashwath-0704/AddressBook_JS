@@ -140,6 +140,23 @@ function getCountOfAddressBook(Array) {
     return Array.length;
 }
 
+/**
+ * @purpose ->UC7 : Ability to ensure there is no Duplicate Entry of the same Person in the Address Book
+ * @param {*} Array 
+ * @returns 
+ */
+function hasDuplicates(Array) {
+    return new Set(Array).length !== Array.length;
+}
+
+function newFunction() {
+    if (hasDuplicates(addressBook)) {
+        console.log("Duplicate elements found.");
+    } else {
+        console.log("No Duplicates found.");
+    }
+}
+
 
 // ----------------------------------------main running ---------------------------------
 
@@ -152,3 +169,4 @@ let addressBook = new Array(...personArray1, ...personArray2, ...personArray3); 
 console.log(findPerosnAndEditName(addressBook, "Ashwath", "Deepthi Reddy")); // UC4 edit person 
 console.log(deletePersonFromArray(addressBook, "Ashwath")); // UC5 delete
 console.log((getCountOfAddressBook(addressBook))); // UC6 Counting the person count in array
+newFunction(); // UC7
